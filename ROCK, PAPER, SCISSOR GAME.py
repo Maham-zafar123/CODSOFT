@@ -14,6 +14,11 @@ def losermsgs():
     print("\n\t\tOOPS!...... you lost this game!!!!!!😢😢😢😢 \n")
 
 
+def turns_both(computer_choice, user_choice):
+    print(f"\n\t\t→ Computer's Turn is {computer_choice}.\n")
+    print(f"\n\t\t→ User's Turn is {user_choice}.\n")
+
+
 def winner_announcment(winning_choice, losing_choice):
     print(
         f"\n\t\t{winning_choice.capitalize()} beats the {losing_choice.capitalize()}\n")
@@ -57,14 +62,14 @@ welcome_msg()
 
 while True:
     choice = int(input(
-        "Enter a number:   \n  → Press 1 to see the RULES of the game : \n  → Press 2 to continue the game : \n  → Press 3 to exit : "))
+        "Enter a number:   \n\n\t\t  → Press 1 to see the RULES of the game : \n\t\t  → Press 2 to continue the game : \n\t\t  → Press 3 to exit : "))
     if choice == 1:
         print(RULES_game)
     elif choice == 2:
         computer_choice = random.choice(list_choice)
         user_choice = input(
             "Enter Your Choice ('rock','scissor','paper'):    \n→  ").lower()
-
+        turns_both(computer_choice, user_choice)
         gamewin(computer_choice, user_choice)
     elif choice == 3:
         exit()
